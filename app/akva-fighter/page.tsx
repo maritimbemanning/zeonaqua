@@ -16,7 +16,7 @@ export default function AkvaFighterPage() {
       {/* Hero Section */}
       <section className="relative bg-slate-900 text-white min-h-[400px] md:min-h-[500px]">
         <Image
-          src="/images/akvafighter.jpg"
+          src="/images/MS_AkvaFighter.jpg"
           alt="MS Akva Fighter fra siden med kran i bruk og ROV-utstyr synlig"
           fill
           className="object-cover opacity-60"
