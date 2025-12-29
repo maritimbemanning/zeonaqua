@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     default: "Zeon Aqua | Maritim servicepartner for havbruk i Nord-Norge",
     template: "%s | Zeon Aqua",
   },
-  description: "Servicebåt og mannskap til havbruksnæringen. MS Akva Fighter leverer fortøyning, frakt og ROV-støtte i Troms, Nordland og Finnmark.",
+  description: "Zeon Aqua AS er et servicebåtrederi som tilbyr spesialiserte tjenester til havbruksnæringen og kystnær industri.",
 };
 
 export default function RootLayout({

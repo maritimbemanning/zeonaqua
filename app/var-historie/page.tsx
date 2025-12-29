@@ -38,7 +38,7 @@ export default function VarHistoriePage() {
                 </p>
                 <p>
                   Vi tilbyr servicebåttjenester til havbruksnæringen og
-                  kystnær industri langs kysten fra Nordland til Finnmark.
+                  kystnær industri.
                 </p>
               </div>
             </div>
