@@ -33,13 +33,12 @@ export default function VarHistoriePage() {
               <h2 className="text-2xl font-bold text-slate-900 mb-4">Selskapet</h2>
               <div className="space-y-4 text-slate-600 leading-relaxed">
                 <p>
-                  Zeon Aqua AS ble etablert i 2024 av Jørgen Gamst og medeier
-                  Oddvar Nes AS. Selskapet er basert i Botnhamn, strategisk
-                  plassert mellom Tromsø og Senja.
+                  Zeon Aqua AS ble etablert i 2024 og er basert i Botnhamn,
+                  strategisk plassert mellom Tromsø og Senja.
                 </p>
                 <p>
-                  Vi tilbyr servicebåttjenester til havbruksnæringen langs
-                  kysten fra Nordland til Finnmark.
+                  Vi tilbyr servicebåttjenester til havbruksnæringen og
+                  kystnær industri langs kysten fra Nordland til Finnmark.
                 </p>
               </div>
             </div>

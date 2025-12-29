@@ -55,7 +55,7 @@ export default function Home() {
             variants={fadeIn}
             className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-8"
           >
-            Servicebåt for havbruk i Nord-Norge
+            Maritime tjenester i Nord-Norge
           </motion.h1>
 
           <motion.p
@@ -83,8 +83,8 @@ export default function Home() {
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold text-slate-900 mb-4">Våre tjenester</h2>
             <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-              Vi leverer maritime servicetjenester til oppdrettsnæringen langs
-              kysten fra Nordland til Finnmark.
+              Vi leverer maritime servicetjenester til havbruksnæringen og
+              kystnær industri langs kysten fra Nordland til Finnmark.
             </p>
           </div>
 
