@@ -4,249 +4,183 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import SectionWrapper from "./components/SectionWrapper";
-import UseCaseCard from "./components/UseCaseCard";
-import ContactBlock from "./components/ContactBlock";
-import { COMPANY, USE_CASES } from "./lib/constants";
+import { COMPANY } from "./lib/constants";
 
-const heroStats = [
-  { label: "Lengde", value: "22,5 m" },
-  { label: "Arbeidsdekk", value: "40 m²" },
-  { label: "Kran", value: "12 t Palfinger" },
-  { label: "Marsjfart", value: "20 knop" },
-];
-
-const capabilityMatrix = [
+const services = [
   {
-    title: "Fortøyning",
-    points: ["Ankervinsj 10 t", "Dobbel capstan", "Dekkskraner"],
+    title: "Fortøyningsarbeid",
+    description: "Inspeksjon, utskifting og setting av fortøyninger for oppdrettsanlegg.",
   },
   {
-    title: "Logistikk",
-    points: ["Containerlast", "Lukket lager", "ROV-støtte"],
+    title: "Frakt og logistikk",
+    description: "Transport av utstyr og materialer til anlegg langs kysten.",
   },
   {
-    title: "Beredskap",
-    points: ["24/7 crew", "NS 9415 rutiner", "Dokumentert HMS"],
-  },
-];
-
-const responseAreas = [
-  { area: "Troms", detail: "Primærbase Tromsø. Umiddelbar mobilisering." },
-  { area: "Nordland", detail: "Fast ukekapasitet og langvarige kontrakter." },
-  { area: "Finnmark", detail: "Prosjektbasert støtte og sesongtopp-dekning." },
-];
-
-const processSteps = [
-  {
-    title: "Brief",
-    subtitle: "Oppdragsbeskrivelse",
-    description: "Vi avklarer last, lokasjon og sikkerhetsparametere i løpet av samme dag.",
+    title: "ROV-støtte",
+    description: "Plattform for ROV-operasjoner og undervannsarbeid.",
   },
   {
-    title: "Plan",
-    subtitle: "Logistikk og bemanning",
-    description: "Crew, dekksutstyr og værvinduer settes i en operativ rekkefølge.",
-  },
-  {
-    title: "Utførelse",
-    subtitle: "Operasjon til sjøs",
-    description: "MS Akva Fighter gjennomfører oppdraget med kontinuerlig statusdeling.",
-  },
-  {
-    title: "Rapport",
-    subtitle: "Teknisk dokumentasjon",
-    description: "Leveranse loggføres med bilder, måledata og signert sjekkliste.",
+    title: "Notservice",
+    description: "Assistanse ved notskift, inspeksjon og vedlikehold.",
   },
 ];
 
 const fadeIn = {
-  hidden: { opacity: 0, y: 24 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" as const } },
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" as const } },
 };
 
 export default function Home() {
   return (
     <>
+      {/* Hero */}
       <motion.section
         initial="hidden"
         animate="visible"
-        className="bg-[#061427] text-white border-b border-slate-900"
+        className="relative bg-[#0a1628] text-white min-h-screen flex items-center"
       >
-        <div className="max-w-6xl mx-auto px-4 py-20 lg:py-24 grid gap-12 lg:grid-cols-2">
-          <motion.div variants={fadeIn}>
-            <p className="text-sm uppercase tracking-[0.4em] text-sky-300 mb-6">MS AKVA FIGHTER</p>
-            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl leading-tight text-white">
-              Servicebåt for havbruk i nord
-            </h1>
-            <p className="mt-6 text-lg text-slate-100 max-w-xl">
-              Crew og fartøy til fortøyning, frakt og tekniske operasjoner i Troms og Nordland. Flat
-              struktur, tydelig kommunikasjon og dokumentert leveranse.
-            </p>
-            <div className="mt-10 flex flex-col sm:flex-row gap-4">
-              <Link
-                href="/akva-fighter"
-                className="inline-flex items-center justify-center rounded-full border border-white/30 px-7 py-3 text-sm font-semibold tracking-wide hover:bg-white hover:text-[#061427] transition"
-              >
-                Se fartøydata
-              </Link>
-              <a
-                href={`tel:${COMPANY.phoneClean}`}
-                className="inline-flex items-center justify-center rounded-full bg-white text-[#061427] px-7 py-3 text-sm font-semibold tracking-wide hover:bg-slate-200 transition"
-              >
-                Ring vakt: {COMPANY.phone}
-              </a>
-            </div>
-          </motion.div>
-
-          <motion.div variants={fadeIn} className="bg-[#0b1f33] border border-slate-800 rounded-2xl p-6 relative">
-            <div className="flex justify-between text-xs text-slate-300 uppercase tracking-[0.4em] border-b border-slate-800 pb-3">
-              <span>Operativ status</span>
-              <span>Bemannet 24/7</span>
-            </div>
-            <div className="mt-6 rounded-xl border border-slate-800 overflow-hidden bg-[#061427]">
-              <Image
-                src="/images/hero.webp"
-                alt="MS Akva Fighter"
-                width={640}
-                height={420}
-                className="w-full h-64 object-cover"
-                priority
-              />
-            </div>
-            <dl className="mt-6 grid grid-cols-2 gap-y-4 text-sm text-slate-200">
-              <div>
-                <dt className="text-slate-400">MMSI</dt>
-                <dd className="font-semibold">258011000</dd>
-              </div>
-              <div>
-                <dt className="text-slate-400">Havn</dt>
-                <dd className="font-semibold">Tromsø</dd>
-              </div>
-              <div>
-                <dt className="text-slate-400">Crew</dt>
-                <dd className="font-semibold">3-4 personer</dd>
-              </div>
-              <div>
-                <dt className="text-slate-400">Oppdrag</dt>
-                <dd className="font-semibold">Fortøyning, logistikk, ROV</dd>
-              </div>
-            </dl>
-          </motion.div>
+        <div className="absolute inset-0">
+          <Image
+            src="/images/hero.webp"
+            alt="MS Akva Fighter"
+            fill
+            className="object-cover opacity-25"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0a1628]/50 to-[#0a1628]" />
         </div>
 
-        <div className="border-t border-slate-800">
-          <div className="max-w-6xl mx-auto px-4 py-8 grid grid-cols-2 md:grid-cols-4 gap-6 text-sm">
-            {heroStats.map((stat) => (
-              <div key={stat.label} className="space-y-1">
-                <p className="text-slate-400 uppercase tracking-[0.3em] text-xs">{stat.label}</p>
-                <p className="text-lg font-semibold">{stat.value}</p>
+        <div className="relative max-w-4xl mx-auto px-8 py-32 text-center">
+          <motion.h1
+            variants={fadeIn}
+            className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-8"
+          >
+            Maritime tjenester i Nord-Norge
+          </motion.h1>
+
+          <motion.p
+            variants={fadeIn}
+            className="text-xl md:text-2xl text-slate-300 leading-relaxed max-w-3xl mx-auto"
+          >
+            Zeon Aqua AS er et servicebåtrederi som tilbyr spesialiserte tjenester
+            til havbruksnæringen og kystnær industri.
+          </motion.p>
+
+          <motion.div variants={fadeIn} className="mt-12">
+            <Link
+              href="/kontakt"
+              className="inline-flex items-center justify-center bg-white text-slate-900 px-8 py-4 rounded-lg font-medium hover:bg-slate-100 transition"
+            >
+              Ta kontakt
+            </Link>
+          </motion.div>
+        </div>
+      </motion.section>
+
+      {/* Tjenester */}
+      <SectionWrapper className="bg-white">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold text-slate-900 mb-4">Våre tjenester</h2>
+            <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+              Vi leverer maritime servicetjenester til havbruksnæringen og
+              kystnær industri langs kysten fra Nordland til Finnmark.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {services.map((service) => (
+              <div
+                key={service.title}
+                className="border border-slate-200 rounded-lg p-6"
+              >
+                <h3 className="font-semibold text-lg text-slate-900 mb-2">
+                  {service.title}
+                </h3>
+                <p className="text-slate-600">{service.description}</p>
               </div>
             ))}
           </div>
         </div>
-      </motion.section>
-
-      <SectionWrapper className="bg-white">
-        <div className="max-w-4xl mx-auto text-center mb-12">
-          <p className="text-xs uppercase tracking-[0.4em] text-slate-500">TJENESTER</p>
-          <h2 className="font-display text-3xl md:text-4xl text-slate-900 mt-4">Oppdrag vi tar</h2>
-          <p className="mt-4 text-slate-600">
-            Vi jobber flatt og teknisk. Hvert oppdrag blir koordinert med tydelig ansvar, kontaktpunkt og
-            sikkerhetslogg.
-          </p>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {USE_CASES.map((useCase, index) => (
-            <motion.div
-              key={useCase.id}
-              variants={fadeIn}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ delay: index * 0.05 }}
-            >
-              <UseCaseCard
-                title={useCase.title}
-                description={useCase.description}
-                href={`/akva-fighter#${useCase.id}`}
-              />
-            </motion.div>
-          ))}
-        </div>
       </SectionWrapper>
 
+      {/* Fartøy */}
       <SectionWrapper className="bg-slate-50 border-y border-slate-200">
-        <div className="grid gap-6 md:grid-cols-3">
-          {capabilityMatrix.map((item) => (
-            <motion.div
-              key={item.title}
-              variants={fadeIn}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.3 }}
-              className="rounded-2xl border border-slate-200 bg-white p-6"
-            >
-              <p className="text-xs uppercase tracking-[0.4em] text-slate-500">KAPASITET</p>
-              <h3 className="font-display text-2xl text-slate-900 mt-3">{item.title}</h3>
-              <ul className="mt-5 space-y-2 text-sm text-slate-600">
-                {item.points.map((point) => (
-                  <li key={point} className="flex items-center gap-2">
-                    <span className="h-px w-6 bg-slate-300" />
-                    {point}
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-          ))}
-        </div>
-      </SectionWrapper>
-
-      <SectionWrapper className="bg-white">
-        <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
-          <motion.div variants={fadeIn} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }}>
-            <p className="text-xs uppercase tracking-[0.4em] text-slate-500">OPERASJONSOMRÅDE</p>
-            <h2 className="font-display text-3xl text-slate-900 mt-4">Hvor vi responderer</h2>
-            <p className="mt-4 text-slate-600">
-              MS Akva Fighter er rigget for nordlige farvann. Vi har faste løp i Troms og Nordland, men kan
-              mobilisere lenger nord eller sør med kort varsel.
-            </p>
-            <div className="mt-8 grid gap-4">
-              {responseAreas.map((item) => (
-                <div key={item.area} className="border border-slate-200 rounded-xl p-4">
-                  <p className="text-sm uppercase tracking-[0.3em] text-slate-500">{item.area}</p>
-                  <p className="mt-2 text-slate-900 font-semibold">{item.detail}</p>
-                </div>
-              ))}
+        <div className="max-w-5xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-3xl font-bold text-slate-900 mb-4">MS Akva Fighter</h2>
+              <p className="text-lg text-slate-600 leading-relaxed mb-6">
+                Vårt fartøy er en servicebåt bygget for havbruksoperasjoner i
+                nordnorske farvann. Båten er utstyrt for fortøyningsarbeid,
+                frakt og ROV-støtte.
+              </p>
+              <Link
+                href="/akva-fighter"
+                className="inline-flex items-center text-slate-900 font-medium hover:text-slate-600"
+              >
+                Les mer om fartøyet
+                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </Link>
             </div>
-          </motion.div>
 
-          <motion.div
-            variants={fadeIn}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            className="rounded-2xl border border-slate-200 bg-slate-50 p-6"
-          >
-            <p className="text-xs uppercase tracking-[0.4em] text-slate-500">PROSESS</p>
-            <h3 className="font-display text-2xl text-slate-900 mt-3">Hvordan vi jobber</h3>
-            <ol className="mt-6 space-y-6 text-sm text-slate-700">
-              {processSteps.map((step, index) => (
-                <li key={step.title} className="border-l-2 border-slate-300 pl-4">
-                  <span className="text-xs text-slate-500">{String(index + 1).padStart(2, "0")}</span>
-                  <p className="mt-1 text-slate-900 font-semibold">{step.title}</p>
-                  <p className="text-slate-500 text-xs uppercase tracking-[0.2em]">{step.subtitle}</p>
-                  <p className="mt-2 text-slate-600">{step.description}</p>
-                </li>
-              ))}
-            </ol>
-          </motion.div>
+            <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
+              <Image
+                src="/images/MS_AkvaFighter.jpg"
+                alt="MS Akva Fighter"
+                fill
+                className="object-cover"
+              />
+            </div>
+          </div>
         </div>
       </SectionWrapper>
 
-      <SectionWrapper className="bg-slate-900">
-        <motion.div variants={fadeIn} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.4 }}>
-          <ContactBlock headline="La oss planlegge neste operasjon" showForm />
-        </motion.div>
+      {/* Om oss */}
+      <SectionWrapper className="bg-white">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-3xl font-bold text-slate-900 mb-4">Om selskapet</h2>
+          <p className="text-lg text-slate-600 leading-relaxed mb-8">
+            Zeon Aqua AS ble etablert i 2024 og er basert i Botnhamn, strategisk
+            plassert mellom Tromsø og Senja. Vi betjener havbruksnæringen i
+            Troms, Nordland og Finnmark.
+          </p>
+          <Link
+            href="/var-historie"
+            className="inline-flex items-center text-slate-900 font-medium hover:text-slate-600"
+          >
+            Les mer om oss
+            <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </Link>
+        </div>
+      </SectionWrapper>
+
+      {/* Kontakt */}
+      <SectionWrapper className="bg-[#0a1628] text-white">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-3xl font-bold mb-4">Kontakt oss</h2>
+          <p className="text-lg text-slate-300 mb-8">
+            Ta kontakt for mer informasjon om våre tjenester.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href={`tel:${COMPANY.phoneClean}`}
+              className="inline-flex items-center justify-center bg-white text-slate-900 px-8 py-4 rounded-lg font-medium hover:bg-slate-100 transition"
+            >
+              {COMPANY.phone}
+            </a>
+            <a
+              href={`mailto:${COMPANY.email}`}
+              className="inline-flex items-center justify-center border border-white/30 px-8 py-4 rounded-lg font-medium hover:bg-white/10 transition"
+            >
+              {COMPANY.email}
+            </a>
+          </div>
+        </div>
       </SectionWrapper>
     </>
   );

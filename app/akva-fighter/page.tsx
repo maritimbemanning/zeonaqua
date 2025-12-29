@@ -1,122 +1,106 @@
-import type { Metadata } from "next";
-import Image from "next/image";
-import SectionWrapper from "../components/SectionWrapper";
-import SpecGrid from "../components/SpecGrid";
-import ContactBlock from "../components/ContactBlock";
-import { VESSEL, USE_CASES, METADATA } from "../lib/constants";
+"use client";
 
-export const metadata: Metadata = {
-  title: METADATA.vessel.title,
-  description: METADATA.vessel.description,
+import Image from "next/image";
+import { motion } from "framer-motion";
+import SectionWrapper from "../components/SectionWrapper";
+import { COMPANY, VESSEL, SERVICES } from "../lib/constants";
+
+const fadeIn = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" as const } },
 };
 
 export default function AkvaFighterPage() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="relative bg-slate-900 text-white min-h-[400px] md:min-h-[500px]">
+      {/* Hero */}
+      <section className="relative bg-[#0a1628] text-white min-h-[50vh] flex items-end">
         <Image
           src="/images/MS_AkvaFighter.jpg"
-          alt="MS Akva Fighter fra siden med kran i bruk og ROV-utstyr synlig"
+          alt="MS Akva Fighter"
           fill
-          className="object-cover opacity-60"
+          className="object-cover opacity-40"
           priority
         />
-        <div className="relative max-w-6xl mx-auto px-4 py-24 md:py-32">
-          <h1 className="text-3xl md:text-5xl font-bold mb-4">
-            {VESSEL.name}
-          </h1>
-          <p className="text-xl md:text-2xl text-slate-300">
-            Arbeidsbåt bygget for kystnær havbruksservice
-          </p>
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0a1628] via-[#0a1628]/50 to-transparent" />
+
+        <div className="relative max-w-4xl mx-auto px-8 py-16 w-full text-center">
+          <motion.div initial="hidden" animate="visible" variants={fadeIn}>
+            <h1 className="text-4xl md:text-5xl font-bold">{VESSEL.name}</h1>
+            <p className="mt-4 text-xl text-slate-300">{VESSEL.tagline}</p>
+          </motion.div>
         </div>
       </section>
 
-      {/* Nøkkeltall */}
-      <SectionWrapper className="bg-slate-50">
-        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-8">
-          Nøkkeltall
-        </h2>
-        <SpecGrid specs={VESSEL.specs} />
-      </SectionWrapper>
-
-      {/* Bruksscenarier */}
+      {/* Om fartøyet */}
       <SectionWrapper className="bg-white">
-        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-8">
-          Hva brukes båten til?
-        </h2>
-        <div className="space-y-12">
-          {USE_CASES.map((useCase) => (
-            <div
-              key={useCase.id}
-              id={useCase.id}
-              className="border-l-4 border-teal-500 pl-6 scroll-mt-24"
-            >
-              <h3 className="text-xl font-bold text-slate-900 mb-3">
-                {useCase.title}
-              </h3>
-              <div className="space-y-3 text-slate-600">
-                <p>
-                  <span className="font-medium text-slate-800">
-                    Passer når:
-                  </span>{" "}
-                  {useCase.passerNar}
-                </p>
-                <p>
-                  <span className="font-medium text-slate-800">
-                    Eksempel:
-                  </span>{" "}
-                  {useCase.eksempel}
-                </p>
-              </div>
+        <div className="max-w-4xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-2xl font-bold text-slate-900 mb-4">Om fartøyet</h2>
+              <p className="text-slate-600 leading-relaxed">
+                MS Akva Fighter er vårt servicefartøy, bygget for havbruksoperasjoner
+                i nordnorske farvann. Båten er utstyrt for fortøyningsarbeid,
+                frakt og ROV-støtte.
+              </p>
             </div>
-          ))}
+
+            <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
+              <Image
+                src="/images/MS_AkvaFighter.jpg"
+                alt="MS Akva Fighter"
+                fill
+                className="object-cover"
+              />
+            </div>
+          </div>
         </div>
       </SectionWrapper>
 
-      {/* Utstyr ombord */}
-      <SectionWrapper className="bg-slate-50">
-        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-8">
-          Utstyr ombord
-        </h2>
-        <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {VESSEL.equipment.map((item) => (
-            <li
-              key={item}
-              className="flex items-center gap-3 text-slate-800"
-            >
-              <svg
-                className="w-5 h-5 text-teal-600 flex-shrink-0"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
+      {/* Tjenester */}
+      <SectionWrapper className="bg-slate-50 border-y border-slate-200">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-2xl font-bold text-slate-900 mb-8 text-center">Tjenester</h2>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            {SERVICES.map((service) => (
+              <div
+                key={service.id}
+                id={service.id}
+                className="bg-white rounded-lg p-6 border border-slate-200"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M5 13l4 4L19 7"
-                />
-              </svg>
-              {item}
-            </li>
-          ))}
-        </ul>
+                <h3 className="font-semibold text-lg text-slate-900 mb-2">
+                  {service.title}
+                </h3>
+                <p className="text-slate-600">{service.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
       </SectionWrapper>
 
-      {/* Mannskap */}
-      <SectionWrapper className="bg-white">
-        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4">
-          Mannskap
-        </h2>
-        <p className="text-lg text-slate-600 max-w-2xl">
-          Erfaren skipper med over 15 års fartstid i havbruksnæringen. Kjenner kysten, anleggene og jobben som skal gjøres.
-        </p>
-      </SectionWrapper>
-
-      {/* Kontaktblokk */}
-      <SectionWrapper className="bg-slate-50">
-        <ContactBlock headline="Passer Akva Fighter til din jobb?" />
+      {/* Kontakt */}
+      <SectionWrapper className="bg-[#0a1628] text-white">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-3xl font-bold mb-4">Kontakt oss</h2>
+          <p className="text-lg text-slate-300 mb-8">
+            Ta kontakt for mer informasjon om fartøyet.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href={`tel:${COMPANY.phoneClean}`}
+              className="inline-flex items-center justify-center bg-white text-slate-900 px-8 py-4 rounded-lg font-medium hover:bg-slate-100 transition"
+            >
+              {COMPANY.phone}
+            </a>
+            <a
+              href={`mailto:${COMPANY.email}`}
+              className="inline-flex items-center justify-center border border-white/30 px-8 py-4 rounded-lg font-medium hover:bg-white/10 transition"
+            >
+              {COMPANY.email}
+            </a>
+          </div>
+        </div>
       </SectionWrapper>
     </>
   );
