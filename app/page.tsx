@@ -84,7 +84,7 @@ export default function Home() {
             <h2 className="text-3xl font-bold text-slate-900 mb-4">Våre tjenester</h2>
             <p className="text-lg text-slate-600 max-w-2xl mx-auto">
               Vi leverer maritime servicetjenester til havbruksnæringen og
-              kystnær industri langs kysten fra Nordland til Finnmark.
+              kystnær industri.
             </p>
           </div>
 
@@ -144,8 +144,7 @@ export default function Home() {
           <h2 className="text-3xl font-bold text-slate-900 mb-4">Om selskapet</h2>
           <p className="text-lg text-slate-600 leading-relaxed mb-8">
             Zeon Aqua AS ble etablert i 2024 og er basert i Botnhamn, strategisk
-            plassert mellom Tromsø og Senja. Vi betjener havbruksnæringen i
-            Troms, Nordland og Finnmark.
+            plassert mellom Tromsø og Senja.
           </p>
           <Link
             href="/var-historie"
