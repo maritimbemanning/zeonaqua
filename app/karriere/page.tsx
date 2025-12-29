@@ -42,28 +42,6 @@ export default function KarrierePage() {
             </p>
           </div>
 
-          <div className="bg-slate-50 rounded-lg p-6 border border-slate-200 mb-8">
-            <h3 className="font-semibold text-slate-900 mb-4">Det vi ser etter:</h3>
-            <ul className="space-y-2 text-slate-600">
-              <li className="flex items-start gap-3">
-                <span className="text-sky-600 mt-1">•</span>
-                Erfaring fra sjø eller havbruk
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-sky-600 mt-1">•</span>
-                Gyldig sertifikat (D5L eller høyere)
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-sky-600 mt-1">•</span>
-                Praktisk anlagt
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-sky-600 mt-1">•</span>
-                Fleksibel på arbeidstider
-              </li>
-            </ul>
-          </div>
-
           <div className="flex flex-col sm:flex-row gap-4">
             <a
               href={`mailto:${COMPANY.email}?subject=Åpen søknad`}
