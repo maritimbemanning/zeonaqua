@@ -5,11 +5,11 @@ export const COMPANY = {
   phoneClean: "+4748128453",
   email: "post@zeonaqua.no",
   orgNr: "934 626 125",
-  address: "Finkavikhaugen 47",
-  postalCode: "9105 Kvaløya",
-  location: "Tromsø",
+  address: "Botnhamn",
+  postalCode: "9392 Botnhamn",
+  location: "Botnhamn",
   established: "2024",
-  description: "Servicebåtrederi med base i Tromsø. Fortøyning, frakt og ROV-støtte til havbruksnæringen i Nord-Norge.",
+  description: "Zeon Aqua AS er et servicebåtrederi som tilbyr spesialiserte tjenester til havbruksnæringen og kystnær industri.",
   socials: {
     facebook: "https://www.facebook.com/zeonaqua.as",
     linkedin: "https://www.linkedin.com/company/zeon-aqua/posts/?feedView=all",
@@ -18,100 +18,52 @@ export const COMPANY = {
 
 export const VESSEL = {
   name: "MS Akva Fighter",
-  tagline: "Arbeidsbåt for havbruk i Nord-Norge",
-  specs: [
-    {
-      label: "Lengde",
-      value: "22,5 m",
-      context: "Stabil arbeidsplattform",
-    },
-    {
-      label: "Bredde",
-      value: "6 m",
-      context: "God plass på dekk",
-    },
-    {
-      label: "Kran",
-      value: "12 t Palfinger",
-      context: "For fortøyning og løft",
-    },
-    {
-      label: "Dekk",
-      value: "40 m²",
-      context: "Plass til utstyr og last",
-    },
-    {
-      label: "Fart",
-      value: "20 kn",
-      context: "Rask transport mellom anlegg",
-    },
-    {
-      label: "Dypgang",
-      value: "2,5 m",
-      context: "Går inn på grunne områder",
-    },
-  ],
-  equipment: [
-    "Palfinger-kran 12 t/m",
-    "Hydraulisk vinsj",
-    "A-ramme",
-    "Arbeidslys",
-    "VHF og AIS",
-    "Dekk for containerlast",
-  ],
+  tagline: "Servicebåt for havbruk",
 };
 
-export const USE_CASES = [
+export const SERVICES = [
   {
     id: "fortoyning",
     title: "Fortøyningsarbeid",
-    description: "Inspeksjon, utskifting og setting av fortøyninger.",
-    passerNar: "Fortøyninger skal settes, inspiseres eller skiftes",
-    eksempel: "Bytte bunnkjetting på merd",
+    description: "Inspeksjon, utskifting og setting av fortøyninger for oppdrettsanlegg.",
   },
   {
     id: "frakt",
     title: "Frakt og logistikk",
-    description: "Transport av utstyr og materialer til anlegg.",
-    passerNar: "Utstyr skal ut til anlegg",
-    eksempel: "Levering av generator eller materialer",
+    description: "Transport av utstyr og materialer til anlegg langs kysten.",
   },
   {
     id: "rov",
     title: "ROV-støtte",
     description: "Plattform for ROV-operasjoner og undervannsarbeid.",
-    passerNar: "Inspeksjon eller arbeid under vann",
-    eksempel: "ROV-inspeksjon av bunnring",
   },
   {
     id: "not",
     title: "Notservice",
-    description: "Støtte ved notskift og notarbeid.",
-    passerNar: "Not skal løftes, skiftes eller inspiseres",
-    eksempel: "Assistanse under notskift",
+    description: "Assistanse ved notskift, inspeksjon og vedlikehold.",
   },
 ];
 
 export const METADATA = {
   home: {
-    title: "Zeon Aqua | Servicebåt for havbruk i Nord-Norge",
-    description: "MS Akva Fighter - arbeidsbåt og mannskap til havbruksnæringen. Fortøyning, frakt og ROV-støtte i Troms og Nordland.",
+    title: "Zeon Aqua AS | Servicebåt for havbruk i Nord-Norge",
+    description: "Zeon Aqua AS er et servicebåtrederi som tilbyr spesialiserte tjenester til havbruksnæringen og kystnær industri.",
   },
   vessel: {
     title: "MS Akva Fighter | Zeon Aqua",
-    description: "22,5m arbeidsbåt med 12-tonns kran. Servicebåt for havbruk i Nord-Norge.",
+    description: "MS Akva Fighter - servicebåt for havbruksoperasjoner i Nord-Norge.",
   },
   contact: {
     title: "Kontakt | Zeon Aqua",
-    description: "Ta kontakt for å sjekke tilgjengelighet. Ring eller send e-post.",
+    description: "Ta kontakt med Zeon Aqua AS for mer informasjon om våre tjenester.",
   },
   history: {
     title: "Om oss | Zeon Aqua",
-    description: "Servicebåtrederi i Tromsø. Fortøyning, frakt og ROV-støtte til havbruksnæringen.",
+    description: "Zeon Aqua AS ble etablert i 2024. Servicebåtrederi basert i Botnhamn.",
   },
   career: {
     title: "Karriere | Zeon Aqua",
-    description: "Jobb hos Zeon Aqua. Send åpen søknad.",
+    description: "Jobb hos Zeon Aqua AS.",
   },
 };
 

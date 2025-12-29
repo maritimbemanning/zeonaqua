@@ -3,8 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import SectionWrapper from "../components/SectionWrapper";
-import ContactBlock from "../components/ContactBlock";
-import { VESSEL, USE_CASES } from "../lib/constants";
+import { COMPANY, VESSEL, SERVICES } from "../lib/constants";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -25,93 +24,31 @@ export default function AkvaFighterPage() {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0a1628] via-[#0a1628]/50 to-transparent" />
 
-        <div className="relative max-w-6xl mx-auto px-4 py-16 w-full">
+        <div className="relative max-w-4xl mx-auto px-8 py-16 w-full text-center">
           <motion.div initial="hidden" animate="visible" variants={fadeIn}>
-            <p className="text-sky-400 text-sm uppercase tracking-widest mb-4">Fartøyet</p>
             <h1 className="text-4xl md:text-5xl font-bold">{VESSEL.name}</h1>
             <p className="mt-4 text-xl text-slate-300">{VESSEL.tagline}</p>
           </motion.div>
         </div>
       </section>
 
-      {/* Spesifikasjoner */}
+      {/* Om fartøyet */}
       <SectionWrapper className="bg-white">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-2xl font-bold text-slate-900 mb-8">Spesifikasjoner</h2>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {VESSEL.specs.map((spec) => (
-              <div
-                key={spec.label}
-                className="bg-slate-50 rounded-lg p-5 border border-slate-200"
-              >
-                <p className="text-sm text-slate-500 mb-1">{spec.label}</p>
-                <p className="text-2xl font-bold text-slate-900">{spec.value}</p>
-                <p className="text-sm text-slate-600 mt-1">{spec.context}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </SectionWrapper>
-
-      {/* Bruksområder */}
-      <SectionWrapper className="bg-slate-50 border-y border-slate-200">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-2xl font-bold text-slate-900 mb-8">Hva vi bruker båten til</h2>
-
-          <div className="space-y-6">
-            {USE_CASES.map((useCase, index) => (
-              <div
-                key={useCase.id}
-                id={useCase.id}
-                className="bg-white rounded-lg p-6 border border-slate-200 scroll-mt-24"
-              >
-                <div className="flex items-start gap-4">
-                  <span className="text-slate-400 font-mono text-sm">{String(index + 1).padStart(2, "0")}</span>
-                  <div>
-                    <h3 className="font-semibold text-lg text-slate-900 mb-2">{useCase.title}</h3>
-                    <p className="text-slate-600 mb-4">{useCase.description}</p>
-
-                    <div className="grid sm:grid-cols-2 gap-4 text-sm">
-                      <div className="bg-slate-50 rounded p-3">
-                        <p className="text-slate-500 mb-1">Passer når:</p>
-                        <p className="text-slate-700">{useCase.passerNar}</p>
-                      </div>
-                      <div className="bg-slate-50 rounded p-3">
-                        <p className="text-slate-500 mb-1">Eksempel:</p>
-                        <p className="text-slate-700">{useCase.eksempel}</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </SectionWrapper>
-
-      {/* Utstyr */}
-      <SectionWrapper className="bg-white">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12">
+        <div className="max-w-4xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-2xl font-bold text-slate-900 mb-6">Utstyr ombord</h2>
-              <ul className="space-y-3">
-                {VESSEL.equipment.map((item) => (
-                  <li key={item} className="flex items-center gap-3 text-slate-700">
-                    <svg className="w-5 h-5 text-sky-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    {item}
-                  </li>
-                ))}
-              </ul>
+              <h2 className="text-2xl font-bold text-slate-900 mb-4">Om fartøyet</h2>
+              <p className="text-slate-600 leading-relaxed">
+                MS Akva Fighter er vårt servicefartøy, bygget for havbruksoperasjoner
+                i nordnorske farvann. Båten er utstyrt for fortøyningsarbeid,
+                frakt og ROV-støtte.
+              </p>
             </div>
 
             <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
               <Image
                 src="/images/MS_AkvaFighter.jpg"
-                alt="MS Akva Fighter dekk"
+                alt="MS Akva Fighter"
                 fill
                 className="object-cover"
               />
@@ -120,24 +57,50 @@ export default function AkvaFighterPage() {
         </div>
       </SectionWrapper>
 
-      {/* Mannskap */}
-      <SectionWrapper className="bg-slate-50 border-t border-slate-200">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-bold text-slate-900 mb-4">Mannskap</h2>
-          <p className="text-slate-600 leading-relaxed">
-            Erfaren skipper med over 15 års fartstid fra havbruksnæringen.
-            Kjenner kysten, anleggene og jobben som skal gjøres.
-          </p>
+      {/* Tjenester */}
+      <SectionWrapper className="bg-slate-50 border-y border-slate-200">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-2xl font-bold text-slate-900 mb-8 text-center">Tjenester</h2>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            {SERVICES.map((service) => (
+              <div
+                key={service.id}
+                id={service.id}
+                className="bg-white rounded-lg p-6 border border-slate-200"
+              >
+                <h3 className="font-semibold text-lg text-slate-900 mb-2">
+                  {service.title}
+                </h3>
+                <p className="text-slate-600">{service.description}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </SectionWrapper>
 
-      {/* CTA */}
-      <SectionWrapper className="bg-slate-900">
-        <ContactBlock
-          headline="Passer båten til jobben din?"
-          subheadline="Ta kontakt for å sjekke tilgjengelighet."
-          showForm
-        />
+      {/* Kontakt */}
+      <SectionWrapper className="bg-[#0a1628] text-white">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-3xl font-bold mb-4">Kontakt oss</h2>
+          <p className="text-lg text-slate-300 mb-8">
+            Ta kontakt for mer informasjon om fartøyet.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href={`tel:${COMPANY.phoneClean}`}
+              className="inline-flex items-center justify-center bg-white text-slate-900 px-8 py-4 rounded-lg font-medium hover:bg-slate-100 transition"
+            >
+              {COMPANY.phone}
+            </a>
+            <a
+              href={`mailto:${COMPANY.email}`}
+              className="inline-flex items-center justify-center border border-white/30 px-8 py-4 rounded-lg font-medium hover:bg-white/10 transition"
+            >
+              {COMPANY.email}
+            </a>
+          </div>
+        </div>
       </SectionWrapper>
     </>
   );
