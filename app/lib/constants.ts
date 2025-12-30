@@ -46,24 +46,29 @@ export const SERVICES = [
 
 export const METADATA = {
   home: {
-    title: "Zeon Aqua AS | Servicebåt for havbruk i Nord-Norge",
-    description: "Zeon Aqua AS er et servicebåtrederi som tilbyr spesialiserte tjenester til havbruksnæringen og kystnær industri.",
+    title: "Servicebåt for havbruk i Nord-Norge",
+    description:
+      "Servicebåtrederi i Nord-Norge. Fortøyningsarbeid, frakt, ROV-støtte og notservice til oppdrettsnæringen. Basert i Botnhamn.",
   },
   vessel: {
-    title: "MS Akva Fighter | Zeon Aqua",
-    description: "MS Akva Fighter - servicebåt for havbruksoperasjoner i Nord-Norge.",
+    title: "MS Akva Fighter - Servicefartøy for oppdrett",
+    description:
+      "MS Akva Fighter er vår servicebåt for havbruksoperasjoner i Nord-Norge. Utstyrt for fortøyning, frakt og ROV-støtte.",
   },
   contact: {
-    title: "Kontakt | Zeon Aqua",
-    description: "Ta kontakt med Zeon Aqua AS for mer informasjon om våre tjenester.",
+    title: "Kontakt oss",
+    description:
+      "Ta kontakt med Zeon Aqua for servicebåttjenester til havbruk i Nord-Norge. Ring +47 481 28 453 eller send e-post.",
   },
   history: {
-    title: "Om oss | Zeon Aqua",
-    description: "Zeon Aqua AS ble etablert i 2024. Servicebåtrederi basert i Botnhamn.",
+    title: "Om Zeon Aqua",
+    description:
+      "Zeon Aqua AS er et servicebåtrederi etablert i 2024, basert i Botnhamn mellom Tromsø og Senja. Vi betjener oppdrettsnæringen i Nord-Norge.",
   },
   career: {
-    title: "Karriere | Zeon Aqua",
-    description: "Jobb hos Zeon Aqua AS.",
+    title: "Jobb hos Zeon Aqua",
+    description:
+      "Ledige stillinger og karrieremuligheter hos Zeon Aqua. Vi søker folk med erfaring fra sjø og havbruk.",
   },
 };
 
