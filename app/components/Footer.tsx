@@ -66,6 +66,17 @@ export default function Footer() {
         <div className="mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-500">
           <p>&copy; {new Date().getFullYear()} {COMPANY.name}</p>
           <p>Org.nr: {COMPANY.orgNr}</p>
+          <p>
+            Nettside av{" "}
+            <a
+              href="https://didriksson.no"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-white transition-colors"
+            >
+              Didriksson Digital
+            </a>
+          </p>
         </div>
       </div>
     </footer>
