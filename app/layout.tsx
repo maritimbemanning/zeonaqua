@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     template: "%s | Zeon Aqua",
   },
   description:
-    "Servicebåtrederi i Nord-Norge. Vi tilbyr fortøyningsarbeid, frakt, ROV-støtte og notservice til oppdrettsnæringen. Basert i Botnhamn.",
+    "Servicebåtrederi i Nord-Norge. Vi tilbyr fortøyningsarbeid, frakt og notservice til oppdrettsnæringen. Basert i Botnhamn.",
   keywords: [
     "servicebåt havbruk",
     "servicebåt oppdrett",
@@ -20,7 +20,6 @@ export const metadata: Metadata = {
     "servicebåt Nord-Norge",
     "havbruk Troms",
     "oppdrett servicefartøy",
-    "ROV-støtte havbruk",
     "notservice",
     "Zeon Aqua",
     "MS Akva Fighter",
@@ -34,7 +33,7 @@ export const metadata: Metadata = {
     siteName: "Zeon Aqua",
     title: "Zeon Aqua | Servicebåt for havbruk i Nord-Norge",
     description:
-      "Servicebåtrederi i Nord-Norge. Fortøyningsarbeid, frakt, ROV-støtte og notservice til oppdrettsnæringen.",
+      "Servicebåtrederi i Nord-Norge. Fortøyningsarbeid, frakt og notservice til oppdrettsnæringen.",
     images: [
       {
         url: "/images/hero.webp",
@@ -48,7 +47,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Zeon Aqua | Servicebåt for havbruk",
     description:
-      "Servicebåtrederi i Nord-Norge. Fortøyning, frakt og ROV-støtte til oppdrettsnæringen.",
+      "Servicebåtrederi i Nord-Norge. Fortøyning, frakt og notservice til oppdrettsnæringen.",
     images: ["/images/hero.webp"],
   },
   alternates: {
@@ -65,7 +64,7 @@ const jsonLd = {
   "@type": "LocalBusiness",
   name: "Zeon Aqua AS",
   description:
-    "Servicebåtrederi i Nord-Norge. Vi tilbyr fortøyningsarbeid, frakt, ROV-støtte og notservice til oppdrettsnæringen.",
+    "Servicebåtrederi i Nord-Norge. Vi tilbyr fortøyningsarbeid, frakt og notservice til oppdrettsnæringen.",
   url: siteUrl,
   telephone: "+47 481 28 453",
   email: "post@zeonaqua.no",
@@ -87,7 +86,6 @@ const jsonLd = {
   serviceType: [
     "Fortøyningsarbeid",
     "Frakt og logistikk",
-    "ROV-støtte",
     "Notservice",
   ],
   priceRange: "$$",

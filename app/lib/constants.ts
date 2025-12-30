@@ -33,11 +33,6 @@ export const SERVICES = [
     description: "Transport av utstyr og materialer til anlegg langs kysten.",
   },
   {
-    id: "rov",
-    title: "ROV-støtte",
-    description: "Plattform for ROV-operasjoner og undervannsarbeid.",
-  },
-  {
     id: "not",
     title: "Notservice",
     description: "Assistanse ved notskift, inspeksjon og vedlikehold.",
@@ -48,12 +43,12 @@ export const METADATA = {
   home: {
     title: "Servicebåt for havbruk i Nord-Norge",
     description:
-      "Servicebåtrederi i Nord-Norge. Fortøyningsarbeid, frakt, ROV-støtte og notservice til oppdrettsnæringen. Basert i Botnhamn.",
+      "Servicebåtrederi i Nord-Norge. Fortøyningsarbeid, frakt og notservice til oppdrettsnæringen. Basert i Botnhamn.",
   },
   vessel: {
     title: "MS Akva Fighter - Servicefartøy for oppdrett",
     description:
-      "MS Akva Fighter er vår servicebåt for havbruksoperasjoner i Nord-Norge. Utstyrt for fortøyning, frakt og ROV-støtte.",
+      "MS Akva Fighter er vår servicebåt for havbruksoperasjoner i Nord-Norge. Utstyrt for fortøyning, frakt og notservice.",
   },
   contact: {
     title: "Kontakt oss",

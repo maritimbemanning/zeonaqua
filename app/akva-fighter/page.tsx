@@ -41,7 +41,7 @@ export default function AkvaFighterPage() {
               <p className="text-slate-600 leading-relaxed">
                 MS Akva Fighter er vårt servicefartøy, bygget for havbruksoperasjoner
                 i nordnorske farvann. Båten er utstyrt for fortøyningsarbeid,
-                frakt og ROV-støtte.
+                frakt og notservice.
               </p>
             </div>
 

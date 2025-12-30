@@ -16,10 +16,6 @@ const services = [
     description: "Transport av utstyr og materialer til anlegg langs kysten.",
   },
   {
-    title: "ROV-støtte",
-    description: "Plattform for ROV-operasjoner og undervannsarbeid.",
-  },
-  {
     title: "Notservice",
     description: "Assistanse ved notskift, inspeksjon og vedlikehold.",
   },
@@ -140,7 +136,7 @@ export default function Home() {
               <p className="text-lg text-slate-600 leading-relaxed mb-6">
                 Vårt fartøy er en servicebåt bygget for havbruksoperasjoner i
                 nordnorske farvann. Båten er utstyrt for fortøyningsarbeid,
-                frakt og ROV-støtte.
+                frakt og notservice.
               </p>
               <Link
                 href="/akva-fighter"
