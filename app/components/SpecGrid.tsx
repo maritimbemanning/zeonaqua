@@ -1,26 +1,28 @@
-interface Spec {
+import React from "react";
+
+interface SpecItem {
   label: string;
   value: string;
-  context: string;
 }
 
 interface SpecGridProps {
-  specs: Spec[];
+  specs: SpecItem[];
 }
 
 export default function SpecGrid({ specs }: SpecGridProps) {
   return (
-    <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-      {specs.map((spec) => (
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      {specs.map((spec, index) => (
         <div
-          key={spec.label}
-          className="bg-white border border-slate-200 rounded-lg p-4 md:p-6"
+          key={index}
+          className="bg-white p-4 rounded-lg border border-zeon-gray hover:border-zeon-navy-light/30 transition-colors"
         >
-          <p className="text-sm text-slate-500 mb-1">{spec.label}</p>
-          <p className="text-2xl md:text-3xl font-bold text-slate-900 mb-2">
+          <div className="text-sm text-slate-500 uppercase tracking-wider font-medium mb-1">
+            {spec.label}
+          </div>
+          <div className="text-lg font-semibold text-zeon-navy">
             {spec.value}
-          </p>
-          <p className="text-sm text-slate-700">{spec.context}</p>
+          </div>
         </div>
       ))}
     </div>
