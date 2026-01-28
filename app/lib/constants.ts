@@ -36,18 +36,13 @@ export const VESSEL = {
 export const SERVICES = [
   {
     id: "service",
-    title: "Servicetjenester til havbruk",
-    description: "Vedlikehold, inspeksjon og bistand til daglig drift.",
-  },
-  {
-    id: "rov",
-    title: "ROV-tjenester",
-    description: "Undervannsinspeksjon og kartlegging med Ocein ROV m/posisjonering.",
+    title: "Servicearbeid til havbruk",
+    description: "Vedlikehold, inspeksjon og bistand til daglig drift av anlegg.",
   },
   {
     id: "installasjon",
-    title: "Installasjon og fortøyning",
-    description: "Nye anlegg, kontroll og utskifting av fortøyninger.",
+    title: "Anleggsarbeid og innfestninger",
+    description: "Installasjon av nye anlegg, kontroll og utskifting av fortøyninger.",
   },
   {
     id: "slep",
@@ -55,9 +50,19 @@ export const SERVICES = [
     description: "Transport av utstyr og materialer. Rigget for slep og ankerhåndtering.",
   },
   {
+    id: "not",
+    title: "Notbytte og notservice",
+    description: "Assistanse ved notskift, inspeksjon og vedlikehold.",
+  },
+  {
     id: "avlusing",
     title: "Bistand under avlusing",
     description: "Hjelpefartøy og døgndrift under avlusingsoperasjoner.",
+  },
+  {
+    id: "rov",
+    title: "ROV-tjenester",
+    description: "Undervannsinspeksjon og kartlegging med Ocein ROV m/posisjonering.",
   },
 ];
 
@@ -65,7 +70,7 @@ export const METADATA = {
   home: {
     title: "Servicebåt for havbruk i Nord-Norge | Zeon Aqua",
     description:
-      "Zeon Aqua AS – Servicebåtrederi i Troms. Vi leverer ROV-inspeksjoner, fortøyningsarbeid, notvask og avlusingsbistand til havbruksnæringen. Ring +47 464 83 005.",
+      "Zeon Aqua AS – Servicebåt for havbruk i Troms. Anleggsarbeid, innfestninger, slep, notbytte, avlusingsbistand og servicearbeid til oppdrettsnæringen. Ring +47 464 83 005.",
   },
   vessel: {
     title: "MS Akva Fighter - Servicefartøy for oppdrett",
